@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://kubernetesjsonschema.dev/v1.18.1/pod.json
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: my-chainsaw
+  generateName: my-chainsaw-
+spec:
+  restartPolicy: Never
+  containers:
+  - image: nisse123/chainsaw:latest
+    name: my-chainsaw
+    env:
+      - name: BLOB
+        value: myblob
